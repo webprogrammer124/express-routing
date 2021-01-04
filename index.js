@@ -1,10 +1,12 @@
 const express = require('express');
 
 const path = require('path')
+const bodyParser= require('body-parser');
 
 const app = express();
 
 const PORT = 4000;
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.listen(PORT,(req,res)=>{
     console.log('server is running at port:',PORT)
@@ -36,7 +38,9 @@ app.get("/signin",(req,res)=>{
          res.sendFile(path.join(__dirname,'registration','signin.html'))
      }
      )
-    //  app.post("/signin",(req,res))
+      app.post("/signin",(req,res)=>{
+          res.send(req.body.email)
+      })
 
 
 
