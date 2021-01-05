@@ -1,186 +1,85 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-          font-family: Arial, Helvetica, sans-serif;
-        }
-        
-        * {
-          box-sizing: border-box;
-        }
-        
-        /* style the container */
-        .container {
-          position: relative;
-          border-radius: 5px;
-          background-color: #f2f2f2;
-          padding: 20px 0 30px 0;
-        } 
-        
-        /* style inputs and link buttons */
-        input,
-        .btn {
-          width: 100%;
-          padding: 12px;
-          border: none;
-          border-radius: 4px;
-          margin: 5px 0;
-          opacity: 0.85;
-          display: inline-block;
-          font-size: 17px;
-          line-height: 20px;
-          text-decoration: none; /* remove underline from anchors */
-        }
-        
-        input:hover,
-        .btn:hover {
-          opacity: 1;
-        }
-        
-        /* add appropriate colors to fb, twitter and google buttons */
-        .fb {
-          background-color: #3B5998;
-          color: white;
-        }
-        
-        .twitter {
-          background-color: #55ACEE;
-          color: white;
-        }
-        
-        .google {
-          background-color: #dd4b39;
-          color: white;
-        }
-        
-        /* style the submit button */
-        input[type=submit] {
-          background-color: #4CAF50;
-          color: white;
-          cursor: pointer;
-        }
-        
-        input[type=submit]:hover {
-          background-color: #45a049;
-        }
-        
-        /* Two-column layout */
-        .col {
-          float: left;
-          width: 50%;
-          margin: auto;
-          padding: 0 50px;
-          margin-top: 6px;
-        }
-        
-        /* Clear floats after the columns */
-        .row:after {
-          content: "";
-          display: table;
-          clear: both;
-        }
-        
-        /* vertical line */
-        .vl {
-          position: absolute;
-          left: 50%;
-          transform: translate(-50%);
-          border: 2px solid #ddd;
-          height: 175px;
-        }
-        
-        /* text inside the vertical line */
-        .vl-innertext {
-          position: absolute;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          background-color: #f1f1f1;
-          border: 1px solid #ccc;
-          border-radius: 50%;
-          padding: 8px 10px;
-        }
-        
-        /* hide some text on medium and large screens */
-        .hide-md-lg {
-          display: none;
-        }
-        
-        /* bottom container */
-        .bottom-container {
-          text-align: center;
-          background-color: #666;
-          border-radius: 0px 0px 4px 4px;
-        }
-        
-        /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-        @media screen and (max-width: 650px) {
-          .col {
-            width: 100%;
-            margin-top: 0;
-          }
-          /* hide the vertical line */
-          .vl {
-            display: none;
-          }
-          /* show the hidden text on small screens */
-          .hide-md-lg {
-            display: block;
-            text-align: center;
-          }
-        }
-        </style>
+    <title>SignUp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: #1a95aa;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid #1a95aa;;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color:#1a95aa;;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
 </head>
 <body>
-    <h2>Responsive Social Login Form</h2>
-
-
-<div class="container">
-  <form action="/action_page.php">
-    <div class="row">
-      <h2 style="text-align:center">Login with Social Media or Manually</h2>
-      <div class="vl">
-        <span class="vl-innertext">or</span>
-      </div>
-
-      <div class="col">
-        <a href="#" class="fb btn">
-          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
-         </a>
-        <a href="#" class="twitter btn">
-          <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-        </a>
-        <a href="#" class="google btn"><i class="fa fa-google fa-fw">
-          </i> Login with Google+
-        </a>
-      </div>
-
-      <div class="col">
-        <div class="hide-md-lg">
-          <p>Or sign in manually:</p>
+    <form method="POST" style="max-width:500px;margin:auto">
+        <h2>Register Form</h2>
+        <div class="input-container">
+          <i class="fa fa-user icon"></i>
+          <input class="input-field" type="text" placeholder="Username" name="usrnm">
         </div>
-
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="submit" value="Login">
-      </div>
       
-    </div>
-  </form>
-</div>
+        <div class="input-container">
+          <i class="fa fa-envelope icon"></i>
+          <input class="input-field" type="text" placeholder="Email" name="email">
+        </div>
+        
+        <div class="input-container">
+          <i class="fa fa-key icon"></i>
+          <input class="input-field" type="password" placeholder="Password" name="psw">
+        </div>
+      
+        <button type="submit" class="btn">Register</button>
+      </form>
+    <!-- <form method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name"/><br>
 
-<div class="bottom-container">
-  <div class="row">
-    <div class="col">
-      <a href="#" style="color:white" class="btn">Sign up</a>
-    </div>
-    <div class="col">
-      <a href="#" style="color:white" class="btn">Forgot password?</a>
-    </div>
-  </div>
-</div>
+        <label for="email">email</label>
+        <input type="text" id="email" name="email"/><br>
+        
+        <label for="password">password</label>
+        <input name="password" id="password" type="password"><br>
+        <button type="submit">SignUp</button>
+
+    </form> -->
 </body>
 </html>
