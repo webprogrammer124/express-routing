@@ -1,11 +1,9 @@
 const express = require('express');
 const path = require('path')
 const bodyParser= require('body-parser');
-const{resolveSoa} = require('dns')
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(express.static(path.join(__dirname,'public')))
 app.use(bodyParser.urlencoded({ extended: true}));
 app.listen(PORT,(req,res)=>{
     console.log('server is running at port:',PORT)
@@ -16,10 +14,9 @@ let users=[
     
 ]
 app.use(express.static(path.join(__dirname,'public')))
-
 app.get('/signup', (req,res)=>{
     // res.send('<h2>AboutUs<h2>')
-      res.sendFile(path.join(__dirname, 'registration','sign.html'))
+      res.sendFile(path.join(__dirname, 'registration','signup.html'))
 })
 
 app.post('/signup',(req,res)=>{
@@ -30,14 +27,14 @@ app.post('/signup',(req,res)=>{
      //    res.sendFile(path.join(__dirname, 'public', 'index.html'))
      res.redirect('/login')
     } else{
-        users.push({name,email,password,id:users.length+1})
        res.sendFile(path.join(__dirname, 'public','index.html'))
+       users.push({name,email,password,id:users.length+1})
      
     }
   
   })
-  app.get('/welcome', (req, res)=>{
-    res.sendFile(path.join(__dirname, 'public', 'welcome.html'))
+  app.get('/index', (req, res)=>{
+    res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 app.get('/login', (req, res)=>{
     res.sendFile(path.join(__dirname, 'registration', 'login.html'))
@@ -47,8 +44,8 @@ app.post('/login',(req,res)=>{
     let found = users.some((item)=>item.email == email)
     let found1 = users.some((item)=>item.password == password)
     if(found && found1){
-        // res.sendFile(path.join(__dirname, 'public', 'index.html'))
-        res.redirect('/welcome')
+        res.sendFile(path.join(__dirname, 'public', 'index.html'))
+     
     } else{
     //    res.sendFile(path.join(__dirname, 'registration','signup.html'))
     res.send('<h1>Please Enter Correct Password</h1>')
