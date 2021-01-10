@@ -7,35 +7,113 @@
    
 </head>
 <style>
+
+
+:root {
+  --y-col: #af0c00;
+  --n-col: #af0000;
+  --y-hov-col: #00ffea;
+}
+
+body {
+  background-colorwh:white ;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  font-family: Helvetica;
+  font-size: 2em;
+  color:black;
+}
+
+a {
+  margin: 0.5em;
+  padding: 1em;
+  min-width: 10em;
+  border: none;
+  font-size: 1em;
+  border-radius: 2em;
+  transition: 0.1s;
+  color: #1f1f1f;
+  box-shadow: 1px 1px 0px #2f2f2f;
+  text-align: center;
+}
+
+#y {
+  order: 1;
+  background-color: var(--y-col);
+}
+
+
+#n {
+  order: 2;
+  background-color: var(--n-col);
+}
+
+#n:focus {
+  animation: rotate 1s infinite;
+}
+
+
+
   h1 {text-align: center;}
   
-    body{
+    /* body{
         background: #1a95aa;
 	background: -webkit-linear-gradient(to right, #0f637c, #41c3ff);
 	background: linear-gradient(to right, #2bceff, #41e9ff);
-    }
+    } */
     button {
-    margin-top: 100px;
+    /* margin-top: 50px;
     margin-right: 300px;
-    margin-left: 300px;
+    margin-left: 570px;
 	border-radius: 20px;
 	border: 1px solid #ffffff;
-	background-color: #ffffff;
-	color: #2bceff;
-	font-size: 12px;
+	background-color: #ffffff; */
+	/* color: #2bceff; */
+	/* font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+	transition: transform 80ms ease-in; */
+}
+
+.img{
+    width: 50%;
+    float: left;
+}
+.reg{
+    float: left;
+    width: 50%;
 }
 </style>
 
 <body>
-   <h1>WelCome to Registration Page</h1>
-   <a href="http://localhost:4000/signup"><button>Signup</button></a>
-   <a href="http://localhost:4000/login"><button>Login</button></a>
+    <!-- <div class="img">
+    <img src="image123.jpg" >
+    </div>
+    <div class="reg">
+    <h1>WelCome to Registration Page</h1>
+    <a href="http://localhost:4000/signup"><button>Signup</button></a>
+    <a href="http://localhost:4000/login"><button>Login</button></a>
+    </div> -->
    
+
+
+    <div class="container">
+        <h1>Wel Come to Registration Foam</h1>
+        
+        <a href="signup"  id="y" > Sign Up</a>
+        <a href="login"  id="n"> Login </a>
+      </div>
+
+
+
 </html>
 </body>
 </html>
